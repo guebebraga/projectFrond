@@ -1,0 +1,280 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 60px 900px 450px 400px 50px;
+    grid-template-areas: 'header header'
+                         'main main'
+                         'main main'
+                         'main main'
+                         'footer footer';
+    height: 100vh;
+    row-gap: 20px;
+}
+
+.hero
+{
+    grid-area: header;
+    
+}
+
+.nav{
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-areas: 'nombre listas';
+}
+
+.nav h1
+{
+    grid-area: nombre;
+    font-size:35px;
+    font-family: 'Dancing Script', cursive;
+    background-color: rgb(73, 73, 73);
+    color: white;
+    text-align: center;
+}
+
+.nav ul
+{
+    grid-area: listas;
+    text-align:center;
+    background-color:dimgray;
+    color: white;
+    padding-top: 7px;
+}
+
+.nav li
+{
+    display: inline;
+    font-size:x-large;
+    font-family: 'Dancing Script', cursive;
+    padding: 10px;
+}
+
+.main
+{
+    grid-area: main;
+    display: grid;
+    grid-template-columns: 1.7fr 1fr;
+    grid-template-rows: 900px 450px 400px;
+    grid-template-areas: 'section aside'
+                         'figure div1'
+                         'articulo div2'; 
+    gap: 15px; 
+}
+
+.article{
+    grid-area: articulo;
+    padding: 50px;   
+}
+
+.article h3{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.parrafo{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.figure{
+    grid-area: figure;
+    background-image: url(https://images.unsplash.com/photo-1525252935900-333f50beecb2?ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDQwfEpwZzZLaWRsLUhrfHxlbnwwfHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60);
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding: 3%;
+}
+
+.figure h1{
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 45px;
+}
+.figure h2{
+    font-family: 'Roboto', sans-serif;
+    color: dimgrey;
+}
+.figure button
+{
+    font-size: 1.2rem;
+    width: 100px;
+    height: 40px;
+    border-color: white;
+    color: white;
+    background:none; 
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+}
+
+.div1
+{
+    grid-area: div1;
+}
+
+#info
+{
+    font-size:larger;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+#texto
+{
+    background-image: url('https://cdn.dribbble.com/users/259220/screenshots/10640050/media/170b53ca3c161d085bc71f43ed1ef3df.png?compress=1&resize=400x300');
+    font-size:x-large;
+
+}
+.botonTextArea
+{
+    font-size: 1.2rem;
+    width: 100px;
+    height: 40px;
+    border-color:chocolate;
+    color:chocolate;
+    background:none; 
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+
+}
+.div2
+{
+    grid-area: div2;
+    align-self: center;
+}
+
+.section 
+{
+    grid-area: section;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 325px 325px;
+    gap: 1.2rem;
+    padding-left: 5px;
+    align-self:center;
+}
+
+/* Elemento creado */
+
+.producto :hover{
+    transform: translateY(-11px) scale(1.1);
+    box-shadow: 0 10px 5px 0 rgba(90, 95, 101, 0.2);
+}
+
+.producto img {
+    width:100%;
+    height: 250px;
+    align-self:center;
+    border-radius: 25px;  
+}
+
+.producto p {
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: dimgray;
+}
+
+.aside
+{
+    grid-area: aside;
+    background-image: url(https://images.unsplash.com/photo-1528301725143-1ba694832e77?ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDExOXxKcGc2S2lkbC1Ia3x8ZW58MHx8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60);
+    background-repeat: no-repeat;
+    background-position:right;
+}
+
+.footer
+{
+    grid-area: footer;
+    background-color: rgb(73, 73, 73);
+    padding-top: 7px; 
+}
+
+.footer li
+{
+    display:inline;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    padding-left: 10px;   
+}
+
+@media(max-width:600px){
+body
+{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 60px 60px 420px 450px 450px 450px 450px 450px 50px;
+    grid-template-areas: 'header'
+                         'header'
+                         'main'
+                         'main'
+                         'main'
+                         'main'
+                         'main'
+                         'main'
+                         'footer';
+    height: 100vh;
+}
+.nav
+{
+    grid-area: header;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows:60px 60px;
+    grid-template-areas: 'nombre'
+                         'listas';
+}
+.nav li{
+    font-size:medium;
+}
+.main
+{
+    grid-area: main;
+    display: grid;
+    grid-template-columns: 1fr ;
+    grid-template-rows:420px 450px 400px;
+    grid-template-areas: 'section'
+                         'aside'
+                         'articulo'
+                         'div1'
+                         'figure'
+                         'div2'; 
+}
+
+.section{
+    grid-area: section;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 210px 210px;
+    gap: 1rem;
+}
+
+.producto{
+    height: 200px;
+}
+
+.producto img{
+    height: 150px;
+}
+
+.aside{
+    background-size: contain;    
+}
+
+.article
+{
+    font-size: small;    
+}
+
+.footer{
+    grid-area: footer;    
+}
+
+.footer li{
+    font-size:small;
+}
+}
+

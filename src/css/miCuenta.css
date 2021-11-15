@@ -1,0 +1,150 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 60px 900px 450px 400px 50px;
+    grid-template-areas: 'header header'
+                         'main main'
+                         'main main'
+                         'main main'
+                         'footer footer';
+    height: 100vh;
+    row-gap: 20px;
+}
+
+.hero
+{
+    grid-area: header;
+    
+}
+
+.nav{
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-areas: 'nombre listas';
+}
+
+.nav h1
+{
+    grid-area: nombre;
+    font-size:35px;
+    font-family: 'Dancing Script', cursive;
+    background-color: rgb(73, 73, 73);
+    color: white;
+    text-align: center;
+}
+
+.nav ul
+{
+    grid-area: listas;
+    text-align:center;
+    background-color:dimgray;
+    color: white;
+    padding-top: 7px;
+}
+
+.nav li
+{
+    display: inline;
+    font-size:x-large;
+    font-family: 'Dancing Script', cursive;
+    padding: 10px;
+}
+
+.main{
+    grid-area: main;
+    padding: 30px;
+}
+
+h1{
+    font-size:29px;
+    font-family: 'Dancing Script', cursive;
+    color: dimgrey;
+    text-align:left;
+}
+#form {
+    display: grid;
+    grid-template-columns: 2fr 1fr max-content;
+    border: 1px solid #ddd;
+    min-width: 500px;
+}
+
+input{
+    padding: 5px 8px;
+    border: none;
+}
+
+#ingresar {
+    font-size: 1.2rem;
+    width: 100px;
+    height: 40px;
+    border-color:black;
+    color:black;
+    background:none; 
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+}
+
+.footer
+{
+    grid-area: footer;
+    background-color: rgb(73, 73, 73);
+    padding-top: 7px; 
+}
+
+.footer li
+{
+    display:inline;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    padding-left: 10px;   
+}
+
+@media(max-width:600px){
+    body
+    {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 60px 60px 420px 450px 450px 450px 450px 450px 50px;
+        grid-template-areas: 'header'
+                             'header'
+                             'main'
+                             'main'
+                             'main'
+                             'main'
+                             'main'
+                             'main'
+                             'footer';
+        height: 100vh;
+    }
+    .nav
+    {
+        grid-area: header;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows:60px 60px;
+        grid-template-areas: 'nombre'
+                             'listas';
+    }
+    .nav li{
+        font-size:medium;
+    }
+    .main{
+        grid-area: main;
+    }
+    .footer{
+        grid-area: footer;    
+    }
+    
+    .footer li{
+        font-size:small;
+    }
+}
+
