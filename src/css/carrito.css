@@ -60,6 +60,12 @@ body
 .main{
     grid-area: main;
 }
+
+h1{
+    font-size:35px;
+    font-family: 'Dancing Script', cursive;
+    color: chocolate;
+}
 .footer
 {
     grid-area: footer;
