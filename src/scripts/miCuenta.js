@@ -54,9 +54,19 @@ botonLogin.addEventListener("click",()=>{
             },
             body: JSON.stringify(objBody),
         })
-        .then(response => response.json())
-        .then(data => alert(data.message));
-    }
+        .then(function (response) {
+            return response.json();
+          })
+          .then(function (response) {
+    
+            if (!response.error) {
+              localStorage.setItem("token", response.token);
+              alert("Login exitoso");
+            } else {
+              alert("Login fallido");
+            }
+          });
+      }
     else {
         alert('Debe completar todos los campos')
     }
