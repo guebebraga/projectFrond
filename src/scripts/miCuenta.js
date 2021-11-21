@@ -56,10 +56,6 @@ botonLogin.addEventListener("click",()=>{
         })
         .then(response => response.json())
         .then(data => alert(data.message));
-        
-        if(!data.error){
-         localStorage.setItem("token", response.token);
-        }
     }
     else {
         alert('Debe completar todos los campos')
